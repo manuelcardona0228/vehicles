@@ -15,6 +15,10 @@ class CreateLinesTable extends Migration
     {
         Schema::create('lines', function (Blueprint $table) {
             $table->id();
+            $table->integer('year');
+            $table->boolean('state');
+            $table->string('slug', 64);
+            $table->unsignedBigInteger('brand_id');
             $table->timestamps();
         });
     }

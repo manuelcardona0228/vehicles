@@ -15,6 +15,8 @@ class CreateMaintenanceVehicleTable extends Migration
     {
         Schema::create('maintenance_vehicle', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('maintenance_id');
+            $table->unsignedBigInteger('vehicle_id');
             $table->timestamps();
         });
     }

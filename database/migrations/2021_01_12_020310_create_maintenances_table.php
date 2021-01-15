@@ -15,6 +15,13 @@ class CreateMaintenancesTable extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
+            $table->date('dateMade');
+            $table->date('dateReview');
+            $table->integer('currentMileage');
+            $table->integer('mileageForReview');
+            $table->string('place');
+            $table->unsignedBigInteger('maintenance_type_id');
+            $table->boolean('state');
             $table->timestamps();
         });
     }

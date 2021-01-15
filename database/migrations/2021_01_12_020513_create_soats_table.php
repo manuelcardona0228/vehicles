@@ -15,6 +15,14 @@ class CreateSoatsTable extends Migration
     {
         Schema::create('soats', function (Blueprint $table) {
             $table->id();
+            $table->string('policyNumber', 125);
+            $table->date('expeditionDate');
+            $table->date('validity');
+            $table->text('document');
+            $table->decimal('cost', '12', '2');
+            $table->string('slug', 255);
+            $table->unsignedBigInteger('vehicle_id');
+            $table->boolean('state');
             $table->timestamps();
         });
     }

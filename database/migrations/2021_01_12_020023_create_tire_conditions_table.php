@@ -15,6 +15,13 @@ class CreateTireConditionsTable extends Migration
     {
         Schema::create('tire_conditions', function (Blueprint $table) {
             $table->id();
+            $table->date('reviewDate');
+            $table->date('newReviewDate');
+            $table->integer('mileageCurrent');
+            $table->integer('mileageNewReview');
+            $table->text('description');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->boolean('state');
             $table->timestamps();
         });
     }

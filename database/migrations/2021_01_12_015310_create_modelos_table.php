@@ -15,6 +15,9 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->id();
+            $table->integer('year');
+            $table->boolean('state');
+            $table->string('slug', 64);
             $table->timestamps();
         });
     }
